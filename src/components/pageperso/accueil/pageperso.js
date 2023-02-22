@@ -6,6 +6,7 @@ function PagePerso() {
   const navigate = useNavigate();
   //on crée un tableau vide pour stocker les données du back end
   const [posts, setPosts] = useState([]);
+
   //on va récupérer la donnée grâce au fetch
   const getPosts = async () => {
     let options = {
@@ -36,6 +37,10 @@ function PagePerso() {
   };
   //on définit la fonction du bouton "j'aime"
   const addLike = async () => {
+    const postId = posts.map((element, index) => {
+      return element._id[index];
+    });
+
     let options = {
       method: "POST",
       headers: {
@@ -43,7 +48,7 @@ function PagePerso() {
         Authorization: `bearer ${localStorage.getItem("@userToken")}`,
       },
       body: JSON.stringify({
-        postId: posts[0]._id,
+        postId: postId,
       }),
     };
     await fetch(
@@ -64,7 +69,7 @@ function PagePerso() {
         <div key={index} className="postRender">
           <h3>{item.title}</h3>
           <p>{item.content}</p>
-          <p>Likes: </p>
+          <p>Likes:{posts.likes} </p>
           <button onClick={addLike}>J'aime</button>
           <button>Ajouter un commentaire</button>
         </div>
