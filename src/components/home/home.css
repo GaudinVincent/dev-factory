@@ -1,0 +1,20 @@
+body,
+html {
+  height: 100%;
+}
+.home {
+  text-align: center;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("./images/mainImage.jpg");
+  padding: 20%;
+  background-position: center;
+  background-size: cover;
+  color: white;
+  margin: 0;
+  height: 100%;
+}
+
+.home a {
+  text-decoration: none;
+  color: black;
+}

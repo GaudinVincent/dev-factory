@@ -1,0 +1,30 @@
+.createProfile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: rgb(68, 63, 138);
+  background: linear-gradient(
+    90deg,
+    rgba(68, 63, 138, 1) 0%,
+    rgba(83, 155, 166, 1) 50%,
+    rgba(154, 220, 233, 1) 100%
+  );
+  padding: 15%;
+}
+.createProfile h1 {
+  color: white;
+}
+.createProfile input[type="Submit"] {
+  background-color: blue;
+  color: white;
+  font-size: large;
+  border-style: none;
+  font-family: fantasy;
+}
+#formContent {
+  display: flex;
+  flex-direction: column;
+}
+#formContent input {
+  margin: 1%;
+}

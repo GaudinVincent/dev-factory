@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import "./createAccount.css";
 
 function CreateAccount() {
   //on crée une variable à vide contenant un objet
@@ -7,8 +9,9 @@ function CreateAccount() {
   const handleInput = (e) => {
     setUserID({ ...userID, [e.target.name]: e.target.value });
   };
-  console.log(userID);
+
   //à la validation du formulaire, on envoie les informations de chaque input dans l'objet
+  const navigate = useNavigate();
   const handleSubmit = async (e) => {
     e.preventDefault();
     let options = {
@@ -23,49 +26,61 @@ function CreateAccount() {
         password: userID.password,
       }),
     };
-    console.log(options);
+    console.log("options", options);
     //on récupère le chemin de l'API
-    let response = await fetch(
+    await fetch(
       `https://social-network-api.osc-fr1.scalingo.io/dev-factory/register`,
       options
-    );
-    let data = response.json();
-    console.log("data", data);
+    )
+      .then((response) => {
+        return response.json();
+      })
+      //si la création de compte est réussie, on envoie une alerte et on se redirige vers pageperso
+      .then((response) => {
+        console.log("response", response.success);
+        alert("Votre compte a bien été créé");
+        navigate("/pageperso");
+      });
   };
 
   return (
-    <div>
-      <h1>Renseignez vos informations personnelles</h1>
-      <form value={userID} onSubmit={handleSubmit} name="userInfo">
+    <div className="createProfile">
+      <h1>Créez votre compte</h1>
+      <form
+        value={userID}
+        onSubmit={handleSubmit}
+        name="userInfo"
+        id="formContent"
+      >
         <input
           type="text"
           onChange={handleInput}
           name="firstname"
           placeholder="Prénom"
-          value={userID.firstname}
+          required
         />
         <input
           type="text"
           onChange={handleInput}
-          value={userID.lastname}
           name="lastname"
           placeholder="Nom de famille"
+          required
         />
         <input
           type="email"
           onChange={handleInput}
-          value={userID.email}
           name="email"
           placeholder="Votre mail"
+          required
         />
         <input
           type="password"
           onChange={handleInput}
           name="password"
-          value={userID.password}
           placeholder="Votre mot de passe"
+          required
         />
-        <input type="submit" value={"Créer un compte"} />
+        <input type="submit" value={"Valider"} />
       </form>
     </div>
   );
