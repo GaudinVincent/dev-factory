@@ -1,18 +1,16 @@
-import { RouterProvider } from "react-router-dom";
-import "./App.css";
-import router from "./navigation/nav";
+import React from "react";
 import React, { useState } from 'react';
 
 const Menu = () => {
   const [Open, setOpen] = useState(false);
 
-  const toggleMenu = () => {
+  const Menu = () => {
     setOpen(!Open);
   };
 
   return (
     <nav>
-      <button onClick={toggleMenu}>Menu</button>
+      <button onClick={Menu}>Menu</button>
       {Open && (
         <ul>
           <li>Accueil</li>
@@ -24,10 +22,4 @@ const Menu = () => {
   );
 };
 
-
-
-function App() {
-  return <RouterProvider router={router} />;
-}
-
-export default App;
+export default Menu;

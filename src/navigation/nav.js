@@ -34,5 +34,4 @@ const router = createBrowserRouter([
     errorElement: <Error />,
   },
 ]);
-
 export default router;
