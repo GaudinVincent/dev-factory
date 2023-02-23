@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import Menu from "../../../assets/menu/menu";
 import "./createPost.css";
 
-function CreatePost(props) {
+function CreatePost() {
   //on stocke le contenu du formulaire dans une variable d'état
   const [postContent, setPostContent] = useState({});
   //on sauvegarde le hooks "useNavigate" dans une variable navigate

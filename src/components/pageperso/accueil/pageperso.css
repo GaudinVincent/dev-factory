@@ -1,10 +1,44 @@
+.publications {
+  text-align: center;
+  font-family: monospace;
+  background: rgb(68, 63, 138);
+  background: linear-gradient(
+    90deg,
+    rgba(68, 63, 138, 1) 0%,
+    rgba(83, 155, 166, 1) 50%,
+    rgba(154, 220, 233, 1) 100%
+  );
+  padding-bottom: 2%;
+}
 .postRender {
   text-align: center;
   font-family: monospace;
+  display: flex;
+  flex-direction: column;
+  border: 4px solid blue;
+  margin: 2% 25% 2% 25%;
+  padding: 3%;
+  background-color: white;
+}
+#createPost {
+  align-self: center;
+  background-color: blue;
+  font-family: fantasy;
+  border-style: none;
+  color: white;
 }
 .postRender button {
   background-color: blue;
   color: white;
   font-family: fantasy;
   border-style: none;
+  margin: 1% 0;
+}
+.postRender textarea {
+  align-self: center;
+}
+
+#showComments {
+  align-self: center;
+  margin: 3%;
 }
