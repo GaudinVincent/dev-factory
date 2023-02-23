@@ -1,3 +1,10 @@
 .postRender {
   text-align: center;
+  font-family: monospace;
+}
+.postRender button {
+  background-color: blue;
+  color: white;
+  font-family: fantasy;
+  border-style: none;
 }

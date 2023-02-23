@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Menu from "../../../assets/menu/menu";
 import "./pageperso.css";
 
 function PagePerso() {
@@ -15,7 +16,7 @@ function PagePerso() {
       },
     };
     await fetch(
-      "https://social-network-api.osc-fr1.scalingo.io/dev-factory/posts",
+      "https://social-network-api.osc-fr1.scalingo.io/dev-factory/posts?limit=5",
       options
     )
       .then((response) => {
@@ -36,10 +37,10 @@ function PagePerso() {
     }
   };
   //on définit la fonction du bouton "j'aime"
-  const addLike = async () => {
-    const postId = posts.map((element, index) => {
-      return element._id[index];
-    });
+  const addLike = async (index) => {
+    //on récupère l'id de chaque element pour pouvoir "liker"
+    const postID = posts[index]._id;
+    console.log("postID", postID);
 
     let options = {
       method: "POST",
@@ -48,9 +49,10 @@ function PagePerso() {
         Authorization: `bearer ${localStorage.getItem("@userToken")}`,
       },
       body: JSON.stringify({
-        postId: postId,
+        postId: postID,
       }),
     };
+    console.log("options", options);
     await fetch(
       "https://social-network-api.osc-fr1.scalingo.io/dev-factory/post/like",
       options
@@ -60,8 +62,17 @@ function PagePerso() {
       })
       .then((response) => {
         console.log("response", response);
+        console.log("posts.likes", posts[index].likes);
+        //si l'envoi des données est réussi, on stocke les likes dans une variable d'état
+        if (response.success == true) {
+          getPosts();
+          //sinon on affiche le message d'erreur
+        } else {
+          alert(response.message);
+        }
       });
   };
+
   //on affiche le contenu de posts grâce au .map
   const renderPosts = () => {
     return posts.map((item, index) => {
@@ -69,8 +80,19 @@ function PagePerso() {
         <div key={index} className="postRender">
           <h3>{item.title}</h3>
           <p>{item.content}</p>
-          <p>Likes:{posts.likes} </p>
-          <button onClick={addLike}>J'aime</button>
+          <p>
+            <i>
+              Par {item.firstname} {item.lastname}
+            </i>
+          </p>
+          <p>Nombre de likes: {item.likes.length} </p>
+          <button
+            onClick={() => {
+              addLike(index);
+            }}
+          >
+            J'aime
+          </button>{" "}
           <button>Ajouter un commentaire</button>
         </div>
       );
@@ -87,9 +109,10 @@ function PagePerso() {
   }, [posts]);
   return (
     <div className="postRender">
-      <h1>Mes publications</h1>
-      {renderPosts()}
+      <Menu />
+      <h1>Publications récentes</h1>
       <button onClick={createPost}>Nouvelle publication</button>
+      {renderPosts()}
     </div>
   );
 }

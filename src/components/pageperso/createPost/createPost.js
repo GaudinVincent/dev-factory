@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Menu from "../../../assets/menu/menu";
 import "./createPost.css";
 
 function CreatePost(props) {
@@ -50,26 +51,29 @@ function CreatePost(props) {
   };
 
   return (
-    <div className="newPost">
-      <h1>Nouvelle publication</h1>
-      <form className="postContent" value={postContent}>
-        <input
-          onChange={saveContent}
-          type="text"
-          placeholder="Titre de la publication"
-          name="title"
-        />
-        <textarea
-          onChange={saveContent}
-          name="commentaire"
-          id="commentaire"
-          cols="60"
-          rows="10"
-          placeholder="Votre contenu"
-        ></textarea>
+    <div>
+      <Menu />
+      <div className="newPost">
+        <h1>Nouvelle publication</h1>
+        <form className="postContent" value={postContent}>
+          <input
+            onChange={saveContent}
+            type="text"
+            placeholder="Titre de la publication"
+            name="title"
+          />
+          <textarea
+            onChange={saveContent}
+            name="commentaire"
+            id="commentaire"
+            cols="60"
+            rows="10"
+            placeholder="Votre contenu"
+          ></textarea>
 
-        <input type="submit" onClick={sendPost} value="Publier" />
-      </form>
+          <input type="submit" onClick={sendPost} value="Publier" />
+        </form>
+      </div>
     </div>
   );
 }

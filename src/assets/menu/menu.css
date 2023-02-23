@@ -1,0 +1,12 @@
+.mainNavbar {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2%;
+  background-color: blue;
+  align-items: center;
+}
+.mainNavbar a {
+  text-decoration: none;
+  color: white;
+  font-family: fantasy;
+}

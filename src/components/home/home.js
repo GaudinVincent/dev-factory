@@ -5,7 +5,6 @@ import "./home.css";
 function Home() {
   //on crée un objet à vide
   const [userLog, setUserLog] = useState({});
-  const [userOnline, setUserOnline] = useState(false);
   const navigate = useNavigate();
   //on ajoute un événement sur les inputs
   const handleLogin = (e) => {
@@ -15,7 +14,6 @@ function Home() {
   const userAuthent = async (e) => {
     e.preventDefault();
     //on spécifie les options de notre requête
-    console.log("user", userLog);
     let options = {
       method: "POST",
       headers: {
@@ -24,7 +22,7 @@ function Home() {
 
       //on dit au body de récupérer le contenu des inputs stockés dans la variable
       body: JSON.stringify({
-        email: userLog.userName,
+        email: userLog.userMail,
         password: userLog.userPassword,
       }),
     };
@@ -42,10 +40,7 @@ function Home() {
         if (response.success == true) {
           //on sauvegarde le token dans le local storage
           localStorage.setItem("@userToken", response.token);
-
-          //on indique que l'utilisateur est en ligne
-          setUserOnline(true);
-          alert("Vous êtes connecté à votre profil");
+          alert("Vous êtes en ligne");
           //on redirige vers la page personnelle
           navigate("/pageperso");
         } else {
@@ -64,7 +59,7 @@ function Home() {
       <form value={userLog}>
         <input
           type="email"
-          name="userName"
+          name="userMail"
           onChange={handleLogin}
           placeholder="Entrez votre email"
           required

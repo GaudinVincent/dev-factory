@@ -37,7 +37,7 @@ function CreateAccount() {
       })
       //si la création de compte est réussie, on envoie une alerte et on se redirige vers pageperso
       .then((response) => {
-        console.log("response", response.success);
+        console.log("response", response);
         alert("Votre compte a bien été créé");
         navigate("/pageperso");
       });

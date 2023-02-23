@@ -5,13 +5,22 @@
   background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
     url("./images/post-background.jpg");
 
-  padding: 10%;
+  padding: 20%;
   background-position: center;
   background-size: cover;
   color: white;
+  font-family: fantasy;
 }
 .newPost input {
   margin: 1%;
+  align-self: center;
+}
+.newPost input[type="submit"] {
+  padding: 2% 4%;
+  font-size: large;
+  background-color: blue;
+  color: white;
+  font-family: fantasy;
 }
 .postContent {
   display: flex;

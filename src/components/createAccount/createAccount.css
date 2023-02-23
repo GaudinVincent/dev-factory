@@ -9,10 +9,15 @@
     rgba(83, 155, 166, 1) 50%,
     rgba(154, 220, 233, 1) 100%
   );
-  padding: 15%;
+  background-position: center top;
+  padding: 30%;
 }
 .createProfile h1 {
   color: white;
+}
+.createProfile input {
+  padding: 6%;
+  border-style: none;
 }
 .createProfile input[type="Submit"] {
   background-color: blue;
@@ -20,6 +25,7 @@
   font-size: large;
   border-style: none;
   font-family: fantasy;
+  align-self: center;
 }
 #formContent {
   display: flex;
