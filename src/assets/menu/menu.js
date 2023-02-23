@@ -4,7 +4,7 @@ import "./menu.css";
 
 function Menu() {
   const logOut = () => {
-    alert("Vous vous êtes déconnecté");
+    alert("Vous êtes hors ligne. A bientôt");
     localStorage.removeItem("@userToken");
   };
   return (
