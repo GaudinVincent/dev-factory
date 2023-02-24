@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "../../../assets/footer/footer";
 import Menu from "../../../assets/menu/menu";
 import "./pageperso.css";
 
@@ -17,7 +18,7 @@ function PagePerso() {
       },
     };
     await fetch(
-      "https://social-network-api.osc-fr1.scalingo.io/dev-factory/posts?limit=5",
+      "https://social-network-api.osc-fr1.scalingo.io/dev-factory/posts?limit=15",
       options
     )
       .then((response) => {
@@ -76,7 +77,6 @@ function PagePerso() {
   };
 
   //on crée la fonction pour ajouter un commentaire
-
   const addComment = async (index) => {
     const postID = posts[index]._id;
 
@@ -100,7 +100,6 @@ function PagePerso() {
       })
       .then((response) => {
         if (response.success == true) {
-          console.log("comments", posts[index].comments);
           setComment("");
           getPosts();
         } else {
@@ -127,7 +126,7 @@ function PagePerso() {
               par {item.firstname} {item.lastname}
             </i>
           </p>
-          <p>Nombre de likes: {item.likes.length} </p>
+          <p>Likes: {item.likes.length} </p>
           <h3>Commentaires</h3>
 
           {/*On ajoute une condition pour l'affichage des commentaires */}
@@ -137,10 +136,11 @@ function PagePerso() {
               {item.comments.map((element, index) => {
                 return (
                   <p key={index}>
-                    {element.content}{" "}
+                    {element.content}
                     <i>
-                      - par {element.firstname} {element.lastname}{" "}
-                    </i>{" "}
+                      {" "}
+                      par {element.firstname} {element.lastname}
+                    </i>
                   </p>
                 );
               })}
@@ -197,6 +197,7 @@ function PagePerso() {
         + Nouvelle publication
       </button>
       <div className="postsContainer"> {renderPosts()}</div>
+      <Footer />
     </div>
   );
 }

@@ -67,7 +67,7 @@ function CreatePost() {
             name="commentaire"
             id="commentaire"
             cols="60"
-            rows="10"
+            rows="14"
             placeholder="Votre contenu"
           ></textarea>
 
