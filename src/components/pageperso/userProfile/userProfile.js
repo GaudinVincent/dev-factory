@@ -82,6 +82,7 @@ function UserProfile() {
         {modifOn ? (
           <div className="modifForm">
             <input
+              required
               value={userProfile.firstname}
               type="text"
               onChange={handleModif}
@@ -89,6 +90,7 @@ function UserProfile() {
               placeholder="Prénom"
             />
             <input
+              required
               value={userProfile.lastname}
               onChange={handleModif}
               type="text"
@@ -96,6 +98,7 @@ function UserProfile() {
               placeholder="Nom de famille"
             />
             <input
+              required
               value={userProfile.email}
               onChange={handleModif}
               type="email"
@@ -103,6 +106,7 @@ function UserProfile() {
               placeholder="Adresse email"
             />
             <input
+              required
               value={userProfile.age}
               onChange={handleModif}
               type="text"
@@ -110,6 +114,7 @@ function UserProfile() {
               placeholder="Age"
             />
             <input
+              required
               value={userProfile.occupation}
               onChange={handleModif}
               type="text"
@@ -139,7 +144,7 @@ function UserProfile() {
             </p>
             {/*On ajoute un bouton modifier au profil pour changer les informations de l'utilisateur */}
             <button className="modifButton" onClick={modifProfile}>
-              <i class="fa-solid fa-pencil"></i> Modifier le profil
+              <i className="fa-solid fa-pencil"></i> Modifier le profil
             </button>
           </div>
         )}

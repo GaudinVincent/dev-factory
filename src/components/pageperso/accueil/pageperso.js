@@ -126,7 +126,10 @@ function PagePerso() {
               par {item.firstname} {item.lastname}
             </i>
           </p>
-          <p> Likes: {item.likes.length} </p>
+          <p>
+            {" "}
+            <i className="fa-solid fa-thumbs-up"></i> Likes: {item.likes.length}{" "}
+          </p>
           <h3>Commentaires</h3>
 
           {/*On ajoute une condition pour l'affichage des commentaires */}
@@ -156,8 +159,8 @@ function PagePerso() {
             name="newComment"
             id="newComment"
             placeholder="Ecrivez un commentaire ici"
-            cols="30"
-            rows="2"
+            cols="40"
+            rows="4"
           ></textarea>
 
           <div id="buttons">

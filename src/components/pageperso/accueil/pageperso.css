@@ -42,6 +42,7 @@
 }
 .postRender textarea {
   align-self: center;
+  resize: none;
 }
 
 #showComments {
