@@ -6,6 +6,12 @@ function Home() {
   //on crée un objet à vide
   const [userLog, setUserLog] = useState({});
   const navigate = useNavigate();
+  const [userOnline, setUserOnline] = useState(false);
+  //on crée une condition pour vérifier si l'utilisateur est authentifié
+  if (userOnline == true) {
+    //si l'utilisateur est en ligne, on le redirige vers sa page personnelle
+    navigate("/pageperso");
+  }
   //on ajoute un événement sur les inputs
   const handleLogin = (e) => {
     setUserLog({ ...userLog, [e.target.name]: e.target.value });
@@ -40,6 +46,7 @@ function Home() {
         if (response.success == true) {
           //on sauvegarde le token dans le local storage
           localStorage.setItem("@userToken", response.token);
+          setUserOnline(true);
           alert("Vous êtes en ligne");
           //on redirige vers la page personnelle
           navigate("/pageperso");
@@ -72,10 +79,12 @@ function Home() {
           required
         />
       </form>
-      <button onClick={userAuthent}>Connexion</button>
-      <button>
-        <Link to={"/createAccount"}>Créer un compte</Link>
-      </button>
+      <div>
+        <button onClick={userAuthent}>Connexion</button>
+        <button>
+          <Link to={"/createAccount"}>Créer un compte</Link>
+        </button>
+      </div>
     </div>
   );
 }

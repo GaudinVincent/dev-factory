@@ -10,6 +10,8 @@ function Menu() {
   return (
     <div>
       <div className="mainNavbar">
+        {" "}
+        <h2 className="mainLogo">DEV FACTORY</h2>
         <p>
           <Link to={"/pageperso"}>Accueil</Link>
         </p>

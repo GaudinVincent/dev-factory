@@ -1,35 +1,37 @@
 .publications {
   text-align: center;
   font-family: monospace;
-  background: rgb(68, 63, 138);
-  background: linear-gradient(
-    90deg,
-    rgba(68, 63, 138, 1) 0%,
-    rgba(83, 155, 166, 1) 50%,
-    rgba(154, 220, 233, 1) 100%
-  );
   padding-bottom: 2%;
+  background: rgb(207, 202, 157);
+  background: radial-gradient(
+    circle,
+    rgba(207, 202, 157, 1) 0%,
+    rgba(189, 189, 54, 1) 100%
+  );
 }
 .postRender {
   text-align: center;
   font-family: monospace;
   display: flex;
   flex-direction: column;
-  border: 4px solid blue;
+  border: 4px solid black;
   margin: 2% 25% 2% 25%;
   padding: 3%;
   background-color: white;
 }
+.postRender h3 {
+  text-decoration: underline;
+}
 #createPost {
   align-self: center;
-  background-color: blue;
+  background-color: black;
   font-family: fantasy;
   border-style: none;
-  color: white;
+  color: yellow;
 }
 .postRender button {
-  background-color: blue;
-  color: white;
+  background-color: black;
+  color: yellow;
   font-family: fantasy;
   border-style: none;
   margin: 1% 0;
