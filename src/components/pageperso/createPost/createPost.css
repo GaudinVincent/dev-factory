@@ -8,7 +8,7 @@
   padding: 20%;
   background-position: center;
   background-size: cover;
-  color: white;
+  color: yellow;
   font-family: fantasy;
 }
 .newPost input {
@@ -18,9 +18,10 @@
 .newPost input[type="submit"] {
   padding: 2% 4%;
   font-size: large;
-  background-color: blue;
-  color: white;
+  background-color: black;
+  color: yellow;
   font-family: fantasy;
+  border: 1px solid yellow;
 }
 .postContent {
   display: flex;

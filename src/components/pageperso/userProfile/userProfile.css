@@ -1,0 +1,27 @@
+.userInfo,
+.userTitle {
+  font-family: monospace;
+  margin: 3%;
+}
+.userInfo {
+  font-size: large;
+}
+.userTitle {
+  text-decoration: underline;
+}
+.modifButton {
+  font-family: fantasy;
+  background-color: black;
+  color: yellow;
+  border-style: none;
+  font-size: medium;
+}
+.userWrapper {
+  padding-bottom: 45%;
+  background: rgb(207, 202, 157);
+  background: radial-gradient(
+    circle,
+    rgba(207, 202, 157, 1) 0%,
+    rgba(189, 189, 54, 1) 100%
+  );
+}

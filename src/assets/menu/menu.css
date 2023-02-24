@@ -2,11 +2,20 @@
   display: flex;
   justify-content: flex-end;
   gap: 2%;
-  background-color: blue;
+  background-color: black;
   align-items: center;
+  border-bottom: 2px solid yellow;
 }
 .mainNavbar a {
   text-decoration: none;
-  color: white;
+  color: yellow;
   font-family: fantasy;
+  padding-right: 10px;
+}
+.mainLogo {
+  flex-grow: 2;
+  color: moccasin;
+  font-family: fantasy;
+  padding-left: 2%;
+  text-align: left;
 }
