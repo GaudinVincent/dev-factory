@@ -47,7 +47,7 @@ function Home() {
           //on sauvegarde le token dans le local storage
           localStorage.setItem("@userToken", response.token);
           setUserOnline(true);
-          alert("Vous êtes en ligne");
+          alert("Vous êtes en ligne.");
           //on redirige vers la page personnelle
           navigate("/pageperso");
         } else {

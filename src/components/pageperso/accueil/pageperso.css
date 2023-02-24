@@ -28,6 +28,7 @@
   font-family: fantasy;
   border-style: none;
   color: yellow;
+  font-size: large;
 }
 .postRender button {
   background-color: black;
@@ -35,6 +36,7 @@
   font-family: fantasy;
   border-style: none;
   margin: 1% 0;
+  font-size: medium;
 }
 .postRender textarea {
   align-self: center;

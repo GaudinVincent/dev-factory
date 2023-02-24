@@ -6,6 +6,7 @@
 .userInfo {
   font-size: large;
 }
+
 .userTitle {
   text-decoration: underline;
 }
@@ -15,6 +16,7 @@
   color: yellow;
   border-style: none;
   font-size: medium;
+  padding: 1%;
 }
 .userWrapper {
   padding-bottom: 45%;
@@ -24,4 +26,18 @@
     rgba(207, 202, 157, 1) 0%,
     rgba(189, 189, 54, 1) 100%
   );
+}
+
+.modifForm {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 0 3% 3% 3%;
+}
+.modifForm button {
+  margin: 1%;
+}
+.modifForm input {
+  margin: 1%;
+  padding: 1%;
 }
