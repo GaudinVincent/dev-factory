@@ -13,13 +13,21 @@ function Menu() {
         {" "}
         <h2 className="mainLogo">DEV FACTORY</h2>
         <p>
-          <Link to={"/pageperso"}>Accueil</Link>
+          <Link to={"/pageperso"}>
+            {" "}
+            <i className="fa-solid fa-house"></i> Accueil
+          </Link>
         </p>
         <p>
-          <Link to="/myprofile">Mon profil</Link>
+          <Link to="/myprofile">
+            <i className="fa-solid fa-user"></i> Mon profil
+          </Link>
         </p>
         <p onClick={logOut}>
-          <Link to="/">Se déconnecter</Link>
+          <Link to="/">
+            {" "}
+            <i className="fa-solid fa-power-off"></i> Se déconnecter
+          </Link>
         </p>
       </div>
     </div>

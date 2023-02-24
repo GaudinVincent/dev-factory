@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Footer from "../../assets/footer/footer";
 import "./createAccount.css";
 
 function CreateAccount() {
@@ -44,44 +45,50 @@ function CreateAccount() {
   };
 
   return (
-    <div className="createProfile">
-      <h1>Créez votre compte</h1>
-      <form
-        value={userID}
-        onSubmit={handleSubmit}
-        name="userInfo"
-        id="formContent"
+    <div>
+      <span
+        onClick={() => {
+          navigate("/");
+        }}
+        id="backToLogin"
       >
-        <input
-          type="text"
-          onChange={handleInput}
-          name="firstname"
-          placeholder="Prénom"
-          required
-        />
-        <input
-          type="text"
-          onChange={handleInput}
-          name="lastname"
-          placeholder="Nom de famille"
-          required
-        />
-        <input
-          type="email"
-          onChange={handleInput}
-          name="email"
-          placeholder="Votre mail"
-          required
-        />
-        <input
-          type="password"
-          onChange={handleInput}
-          name="password"
-          placeholder="Votre mot de passe"
-          required
-        />
-        <input type="submit" value={"Valider"} />
-      </form>
+        <i className="fa-solid fa-arrow-left"></i> Retour à l'accueil
+      </span>
+      <div className="createProfile">
+        {" "}
+        <h1>Créez votre compte</h1>
+        <div id="formContent">
+          <input
+            type="text"
+            onChange={handleInput}
+            name="firstname"
+            placeholder="Prénom"
+            required
+          />
+          <input
+            type="text"
+            onChange={handleInput}
+            name="lastname"
+            placeholder="Nom de famille"
+            required
+          />
+          <input
+            type="email"
+            onChange={handleInput}
+            name="email"
+            placeholder="Votre mail"
+            required
+          />
+          <input
+            type="password"
+            onChange={handleInput}
+            name="password"
+            placeholder="Votre mot de passe"
+            required
+          />
+          <button onClick={handleSubmit}>Valider</button>
+        </div>
+      </div>
     </div>
   );
 }

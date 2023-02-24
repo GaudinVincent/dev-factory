@@ -139,7 +139,7 @@ function UserProfile() {
             </p>
             {/*On ajoute un bouton modifier au profil pour changer les informations de l'utilisateur */}
             <button className="modifButton" onClick={modifProfile}>
-              Modifier le profil
+              <i class="fa-solid fa-pencil"></i> Modifier le profil
             </button>
           </div>
         )}

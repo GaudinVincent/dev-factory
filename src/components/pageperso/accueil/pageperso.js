@@ -126,7 +126,7 @@ function PagePerso() {
               par {item.firstname} {item.lastname}
             </i>
           </p>
-          <p>Likes: {item.likes.length} </p>
+          <p> Likes: {item.likes.length} </p>
           <h3>Commentaires</h3>
 
           {/*On ajoute une condition pour l'affichage des commentaires */}
@@ -166,14 +166,14 @@ function PagePerso() {
                 addLike(index);
               }}
             >
-              J'aime
+              <i className="fa-solid fa-thumbs-up"></i> J'aime
             </button>{" "}
             <button
               onClick={() => {
                 addComment(index);
               }}
             >
-              Ajouter un commentaire
+              <i className="fa-solid fa-comment"></i> Ajouter un commentaire
             </button>
           </div>
         </div>
@@ -194,7 +194,7 @@ function PagePerso() {
       <Menu />
       <h1>Publications récentes</h1>
       <button id="createPost" onClick={createPost}>
-        + Nouvelle publication
+        <i className="fa-solid fa-plus"></i> Nouvelle publication
       </button>
       <div className="postsContainer"> {renderPosts()}</div>
       <Footer />

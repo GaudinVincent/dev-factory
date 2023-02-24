@@ -8,7 +8,7 @@ function Home() {
   const navigate = useNavigate();
   const [userOnline, setUserOnline] = useState(false);
   //on crée une condition pour vérifier si l'utilisateur est authentifié
-  if (userOnline == true) {
+  if (localStorage.getItem("@userToken") && userOnline == true) {
     //si l'utilisateur est en ligne, on le redirige vers sa page personnelle
     navigate("/pageperso");
   }

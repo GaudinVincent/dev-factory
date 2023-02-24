@@ -29,6 +29,7 @@
   border-style: none;
   color: yellow;
   font-size: large;
+  padding: 1%;
 }
 .postRender button {
   background-color: black;
@@ -37,6 +38,7 @@
   border-style: none;
   margin: 1% 0;
   font-size: medium;
+  padding: 1%;
 }
 .postRender textarea {
   align-self: center;

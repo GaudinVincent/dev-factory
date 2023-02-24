@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-position: center top;
   padding: 30%;
   background-color: black;
   background: rgb(207, 202, 157);
@@ -11,27 +10,34 @@
     rgba(207, 202, 157, 1) 0%,
     rgba(189, 189, 54, 1) 100%
   );
+  margin-top: -20%;
 }
 .createProfile h1 {
   font-family: fantasy;
 }
 .createProfile input {
   padding: 6%;
-  border-style: none;
 }
-.createProfile input[type="Submit"] {
+.createProfile button {
   background-color: black;
   color: yellow;
   font-size: large;
-  border-style: none;
   font-family: fantasy;
   align-self: center;
   border: 1px solid yellow;
+  padding: 5%;
 }
 #formContent {
   display: flex;
   flex-direction: column;
+  padding: 10% 25%;
+  border: 2px solid black;
+  background-color: white;
 }
 #formContent input {
   margin: 3%;
+}
+#backToLogin {
+  font-family: fantasy;
+  text-decoration: underline;
 }
